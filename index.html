@@ -1,18 +1,97 @@
-<!-- COMENTAR -->
 <!DOCTYPE html>
 <html lang="en">
-<head> 
-    <meta charset="UTF-8"   ><!-- cargar teclado -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title> Cabanas Maitenes del Percy </title>
+<head>
+    <title>Maitenes del Percy</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Titulo muy grande</h1>
-    <h2>Subtitulo</h2>
-    <h4>Mas chico</h4>
-    <p>Esto es un parrafo <br><br></p>  <!-- el ENTER no funciona, usamos br -->
-    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam sint corrupti nesciunt eius laborum alias cumque consequatur voluptates doloremque repellat est natus, vel ratione sit maiores aspernatur error nam molestias!</p>  <!-- place holder Lorem*nro de parrafos -->
-    <img src="./Imagenes/fotocabana.jpg" alt="Describe la foto antes de que cargue"> <!-- ./imagen -->
+    <header>
+        <div class="menu">
+            <p class="logo">Cabañas Maitenes del Percy</p>
+            <nav>
+                <a href="#InformacionGeneral" class="nav-link">Informacion General</a>
+                <a href="#Nuestras cabanas" class="nav-link">Nuestras Cabanas</a>
+                <a href="#contacto" class="nav-link">Contacto</a>
+            </nav>
+        </div>
+    </header>
+    <section id="bienvenida">
+        <h1>Bienvenido a la pagina web de las Cabañas<br> Maitenes del Percy</h1>
+        <form action="#InformacionGeneral">
+            <button class="btn btn-dark">Saber mas</button>
+        </form>
+    </section>
 
+
+    <section id="InformacionGeneral">
+        <div class="menu">
+            <h2>Informacion General</h2>
+            <p> El establecimiento Maitenes Del Percy está situado en Trevelín, a 28 km del complejo hidroeléctrico Futaleufú y a 1,3 km del Museo del Molino de Nant Fach y ofrece conexión WiFi gratuita, jardín y estacionamiento privado gratuito. <br>
+                Los alojamientos están equipados con zona de comedor, zona de estar con TV vía satélite de pantalla plana, cocina con horno, microondas y heladera, baño privado con artículos de aseo gratuitos y ropa de cama. <br>
+                El establecimiento Maitenes Del Percy incluye parrilla. <br>
+                Los alrededores ofrecen un entorno magnífico para la práctica de esquí y ciclismo. El aeropuerto más cercano es el de Esquel, ubicado a 33 km. <br></p>
+        </div>
+    </section>
+
+    <section id="Nuestras cabanas">
+        <div id="Galeriaquesemueve" class="carousel slide">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#Galeriaquesemueve" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#Galeriaquesemueve" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#Galeriaquesemueve" data-bs-slide-to="2" aria-label="Slide 3"></button>
+              <button type="button" data-bs-target="#Galeriaquesemueve" data-bs-slide-to="3" aria-label="Slide 4"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active item">
+                <img src="imagenes/fotocabana1.jpg" class="d-block w-100 img" alt="fotos">
+                <div class="carousel-caption d-none d-md-block">
+                </div>
+              </div>
+              <div class="carousel-item item">
+                <img src="imagenes/fotocabana2.jpg" class="d-block w-100 img" alt="fotos">
+                <div class="carousel-caption d-none d-md-block">
+                </div>
+              </div>
+              <div class="carousel-item item">
+                <img src="imagenes/fotocabana3.jpg" class="d-block w-100 img" alt="fotos">
+                <div class="carousel-caption d-none d-md-block">
+                </div>
+              </div>
+              <div class="carousel-item item">
+                <img src="imagenes/fotocabana4.jpg" class="d-block w-100 img" alt="fotos">
+                <div class="carousel-caption d-none d-md-block">
+                </div>
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#Galeriaquesemueve" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#Galeriaquesemueve" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+    </section>
+
+    <section id="contacto">
+        <div class="menu">
+            <ul>
+                <li>Telefono: +541141686433</li>
+                <li>Correo electronico: contadorbelen@hotmail.com</li>
+                <li>Ubicacion: <a href="https://maps.app.goo.gl/7GYsVoWfacxrs4LEA" target="_blank">Hace click aca</a></li>
+                <li>Informacion turistica: <a href="https://trevelin.tur.ar/" target="_blank">Hace click aca</a></li>
+            </ul>
+        </div>
+    </section>
+    <footer>
+        <div class="menu">
+            <p>&copy; Maitenes del Percy 2024</p>
+        </div>
+    </footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js" integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>
 </html>
