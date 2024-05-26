@@ -167,6 +167,47 @@ header .nav-link:hover {
     background-color: #0056b3;
 }
 
+#buscador {
+    text-align: center;
+    padding: 50px 12px;
+    background-color: #f1e3f8;
+}
+
+#buscador h2 {
+    color: #228B22;
+}
+
+#buscador input {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin: 20px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+#resultadoBusqueda {
+    list-style: none;
+    padding: 0;
+}
+
+#resultadoBusqueda li {
+    background-color: #fff;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+#resultadoBusqueda li a {
+    text-decoration: none;
+    color: #000;
+}
+
+#resultadoBusqueda li a:hover {
+    color: #228B22;
+}
+
 #contacto {
     text-align: left;
     padding: 150px 12px;
