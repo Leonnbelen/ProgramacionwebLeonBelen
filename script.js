@@ -71,7 +71,7 @@ function mostrarResultados(resultados) {
       listaResultados.innerHTML = '<li>No se encontraron cabañas.</li>';
   }
 }
-// Mostrar todas las cabañas al cargar la página
+
 document.addEventListener('DOMContentLoaded', function() {
   mostrarResultados(cabañas);
 });
