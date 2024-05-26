@@ -39,14 +39,14 @@ document.getElementById('reservaForm').addEventListener('submit', function(event
 
 //BUSCADOR DE CABANAS======================================================================
 
-const cabañas = [
-  { nombre: 'Cabaña Los Andes', url: 'pagina_cabana_1.html' },
-  { nombre: 'Cabaña El Refugio', url: 'pagina_cabana_2.html' },
-  { nombre: 'Cabaña La Montaña', url: 'pagina_cabana_3.html' },
-  { nombre: 'Cabaña El Bosque', url: 'pagina_cabana_4.html' },
-  { nombre: 'Cabaña El Rio', url: 'pagina_cabana_5.html' }
-];
 
+const cabañas = [
+  { nombre: 'Cabaña Los Andes', url: './pagina_cabana_1.html' },
+  { nombre: 'Cabaña El Refugio', url: './pagina_cabana_2.html' },
+  { nombre: 'Cabaña La Montaña', url: './pagina_cabana_3.html' },
+  { nombre: 'Cabaña El Bosque', url: './pagina_cabana_4.html' },
+  { nombre: 'Cabaña El Rio', url: './pagina_cabana_5.html' }
+];
 
 function buscarCabanas() {
   const query = document.getElementById('buscadorInput').value.toLowerCase();
@@ -75,5 +75,5 @@ function mostrarResultados(resultados) {
 document.addEventListener('DOMContentLoaded', function() {
   mostrarResultados(cabañas);
 });
-document.getElementById('buscadorInput').addEventListener('input', buscarCabanas);
 
+document.getElementById('buscadorInput').addEventListener('input', buscarCabanas);
