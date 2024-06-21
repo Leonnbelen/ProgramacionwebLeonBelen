@@ -33,20 +33,24 @@ button {
 .menu {
     max-width: 1400px;
     margin: auto;
+    padding: 0 20px; 
 }
 
 header {
     background-color: #f0dcfa;
     display: flex;
+    flex-wrap: wrap; 
 }
 
 .logo {
     display: flex;
     align-items: center;
+    flex: 1; 
 }
 
 .logo img {
     height: 100px;
+    width: auto;
 }
 
 header .logo h2 {
@@ -60,12 +64,15 @@ header .logo h2 {
 header .menu {
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
+    flex: 2;
 }
 
 header .opciones {
     display: flex;
     align-items: center;
     padding: 25px;
+    flex-wrap: wrap; 
 }
 
 header .nav-link {
@@ -95,15 +102,17 @@ header .nav-link:hover {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center center;
+    padding: 0 20px; 
 }
 
 #bienvenida h1 {
     color: beige;
+    margin: 0 20px; 
 }
 
 #InformacionGeneral {
     text-align: center;
-    padding: 200px 12px;
+    padding: 100px 12px;
     background-color: #FFFAFA;
 }
 
@@ -121,17 +130,17 @@ header .nav-link:hover {
 }
 
 #Nosotros {
-    padding: 200px 20px;
+    padding: 100px 20px;
     background-color: #B0C4DE;
 }
 
-#mapa{
+#mapa {
     padding: 50px;
     text-align: center;
 }
 
-#mapajs{
-    height: 500px; 
+#mapajs {
+    height: 500px;
     width: 100%;
 }
 
@@ -165,6 +174,75 @@ header .nav-link:hover {
 
 #reserva button:hover {
     background-color: #0056b3;
+}
+
+button:hover {
+    background-color: #1e7e34; 
+}
+#carrito {
+    padding: 20px;
+    background-color: #f1e3f8;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+#carrito ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+#carrito li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: 5px 0;
+    background-color: #fff;
+}
+
+#carrito button {
+    padding: 5px 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+#carrito button:hover {
+    background-color: #0056b3;
+}
+
+#carrito p {
+    font-size: 1.5em;
+    font-weight: bold;
+    text-align: right;
+}
+
+#serviciosAdicionales {
+    padding: 20px;
+    background-color: #ecddc1;
+    margin: 20px;
+    border-radius: 10px;
+}
+
+#serviciosAdicionales div {
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+}
+
+#serviciosAdicionales h3 {
+    margin: 0 0 5px;
+    color: #228B22;
+}
+
+#serviciosAdicionales p {
+    margin: 5px 0;
 }
 
 #buscador {
@@ -210,7 +288,7 @@ header .nav-link:hover {
 
 #contacto {
     text-align: left;
-    padding: 150px 12px;
+    padding: 100px 12px;
     background-color: #f1e3f8;
 }
 
@@ -235,11 +313,10 @@ footer {
     background-color: #d59af3;
 }
 
-
-
 @media only screen and (max-width: 768px) {
     header {
         flex-direction: column;
+        align-items: center; 
     }
 
     header .opciones {
@@ -289,5 +366,25 @@ footer {
     button {
         font-size: 0.9em;
         padding: 8px 20px;
+    }
+
+    #bienvenida h1 {
+        font-size: 2em; 
+    }
+
+    #InformacionGeneral {
+        padding: 100px 12px;
+    }
+
+    #Nosotros {
+        padding: 100px 12px;
+    }
+
+    #contacto {
+        padding: 80px 12px;
+    }
+
+    footer {
+        padding: 10px;
     }
 }

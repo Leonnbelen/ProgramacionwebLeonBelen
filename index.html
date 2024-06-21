@@ -121,10 +121,40 @@
                   <label for="fechaSalida">Fecha de Salida</label>
                   <input type="date" id="fechaSalida" required>
               </div>
+              <div>
+                <label for="precio">Precio Total (usd)</label>
+                <input type="text" id="precio" readonly>
+              </div>
               <button type="submit">Enviar</button>
           </form>
       </div>
     </section>
+
+    <section id="serviciosAdicionales">
+      <h2>Servicios Adicionales</h2>
+      <div>
+          <h3>Desayuno</h3>
+          <p>Precio: $10000</p>
+          <button onclick="agregarAlCarrito('Desayuno', 10000)">Agregar al carrito</button>
+      </div>
+      <div>
+          <h3>Guía Turística</h3>
+          <p>Precio: $50000</p>
+          <button onclick="agregarAlCarrito('Guía Turística', 50000)">Agregar al carrito</button>
+      </div>
+      <div>
+          <h3>Transporte</h3>
+          <p>Precio: $22500</p>
+          <button onclick="agregarAlCarrito('Transporte', 22500)">Agregar al carrito</button>
+      </div>
+  </section>
+  
+  <section id="carrito">
+      <h2>Carrito de Servicios</h2>
+      <ul id="listaCarrito"></ul>
+      <p>Total: $<span id="totalCarrito">0</span></p>
+  </section>
+  
 
     <section id="buscador">
       <h2>Buscar Cabañas</h2>

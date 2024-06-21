@@ -16,7 +16,7 @@ function iniciarMap(){
 //FORMULARIO DE RESERVA====================================================
 
 document.getElementById('reservaForm').addEventListener('submit', function(event) {
-  event.preventDefault(); 
+  event.preventDefault();
 
   const nombre = document.getElementById('nombre').value.trim();
   const email = document.getElementById('email').value.trim();
@@ -28,14 +28,85 @@ document.getElementById('reservaForm').addEventListener('submit', function(event
       alert('Por favor, complete todos los campos.');
       return;
   }
-
   if (new Date(fechaSalida) <= new Date(fechaEntrada)) {
       alert('La fecha de salida debe ser posterior a la fecha de entrada.');
       return;
   }
 
+  const precioTotal = calcularPrecio(fechaEntrada, fechaSalida);
+  document.getElementById('precio').value = `$${precioTotal.toFixed(2)}`;
+
   alert('Formulario enviado correctamente.');
 });
+
+function calcularPrecio(fechaEntrada, fechaSalida) {
+  const precioPorDia = 80; 
+  const diasDeEstancia = (new Date(fechaSalida) - new Date(fechaEntrada)) / (1000 * 60 * 60 * 24);
+  return diasDeEstancia * precioPorDia;
+}
+
+function actualizarPrecio() {
+  const fechaEntrada = document.getElementById('fechaEntrada').value;
+  const fechaSalida = document.getElementById('fechaSalida').value;
+
+  if (fechaEntrada && fechaSalida) {
+      const precioTotal = calcularPrecio(fechaEntrada, fechaSalida);
+      document.getElementById('precio').value = `$${precioTotal.toFixed(2)}`;
+  } 
+  else {
+      document.getElementById('precio').value = '';
+  }
+}
+
+document.getElementById('fechaEntrada').addEventListener('change', actualizarPrecio);
+document.getElementById('fechaSalida').addEventListener('change', actualizarPrecio);
+//CARRITO DE SERVICIOS====================================================================
+
+let carrito = [];
+
+function agregarAlCarrito(servicio, precio) {
+    const item = carrito.find(item => item.servicio === servicio);
+    if (item) {
+        item.cantidad++;
+    } else {
+        carrito.push({ servicio, precio, cantidad: 1 });
+    }
+    actualizarCarrito();
+}
+
+function actualizarCarrito() {
+    const listaCarrito = document.getElementById('listaCarrito');
+    listaCarrito.innerHTML = '';
+
+    let total = 0;
+    carrito.forEach(item => {
+        total += item.precio * item.cantidad;
+        const li = document.createElement('li');
+        li.textContent = `${item.servicio} - $${item.precio} x ${item.cantidad}`;
+        const btnEliminar = document.createElement('button');
+        btnEliminar.textContent = 'Eliminar';
+        btnEliminar.onclick = () => eliminarDelCarrito(item.servicio);
+        li.appendChild(btnEliminar);
+        listaCarrito.appendChild(li);
+    });
+
+    document.getElementById('totalCarrito').textContent = total.toFixed(2);
+    localStorage.setItem('carrito', JSON.stringify(carrito));
+}
+
+function eliminarDelCarrito(servicio) {
+    carrito = carrito.filter(item => item.servicio !== servicio);
+    actualizarCarrito();
+}
+
+document.addEventListener('DOMContentLoaded', () => {
+    const carritoGuardado = localStorage.getItem('carrito');
+    if (carritoGuardado) {
+        carrito = JSON.parse(carritoGuardado);
+        actualizarCarrito();
+    }
+});
+
 
 //BUSCADOR DE CABANAS======================================================================
 
