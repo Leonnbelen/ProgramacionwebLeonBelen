@@ -99,6 +99,17 @@ function eliminarDelCarrito(servicio) {
     actualizarCarrito();
 }
 
+function comprarServicios() {
+    if (carrito.length === 0) {
+        alert("El carrito está vacío. Agrega servicios antes de comprar.");
+        return;
+    }
+    alert("Compra realizada con éxito. Gracias por tu preferencia.");
+    
+    carrito = [];
+    actualizarCarrito();
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const carritoGuardado = localStorage.getItem('carrito');
     if (carritoGuardado) {
@@ -106,7 +117,6 @@ document.addEventListener('DOMContentLoaded', () => {
         actualizarCarrito();
     }
 });
-
 
 //BUSCADOR DE CABANAS======================================================================
 
